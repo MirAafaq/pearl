@@ -1,0 +1,36 @@
+<div class="landing-page">
+    <mat-toolbar color="primary">
+        <span class="logo">Pearls</span>
+        <span class="spacer"></span>
+        <button *ngIf="!isLoggedIn" mat-button color="accent" routerLink="/login">Login</button>
+        <button *ngIf="!isLoggedIn" mat-button color="accent" routerLink="/signup">Sign Up</button>
+        <button *ngIf="isLoggedIn" mat-button color="accent" (click)="logout()">Logout</button>
+        <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="isLoggedIn">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/profile">Profile</button>
+          <button mat-menu-item (click)="logout()">Logout</button>
+        </mat-menu>
+        <a mat-button color="accent" routerLink="/">Home</a>
+        <a mat-button color="accent" routerLink="/features">Features</a>
+      </mat-toolbar>
+      
+    <div class="landing-content">
+      <mat-card class="landing-card">
+        <mat-card-header>
+          <div mat-card-avatar class="landing-avatar"></div>
+          <mat-card-title>Welcome to Our Website</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Discover amazing features.</p>
+          <p>Engage with our community.</p>
+          <p>Join us today!</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="accent">Learn More</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  
